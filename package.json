@@ -1,0 +1,22 @@
+{
+  "name": "tbvr-bot",
+  "version": "1.0.0",
+  "description": "a bit for the TAVR discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRavenSeb/TBVR-bot.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "TheRavenSeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheRavenSeb/TBVR-bot/issues"
+  },
+  "homepage": "https://github.com/TheRavenSeb/TBVR-bot#readme"
+}
