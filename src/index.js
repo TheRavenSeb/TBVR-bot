@@ -28,7 +28,9 @@ require("dotenv").config();
 
 
 
-
+client.on("error", () => {
+	console.log("error", st);
+});
 client.on("debug",  (st) => {
 	console.log("debug", st);
 });
@@ -36,10 +38,7 @@ client.on("debug",  (st) => {
 client.on("warn", (st) => {
 	console.log("warn", st);
 });
-client.on(Events.InteractionCreate, interaction => {
-	if (!interaction.isModalSubmit()) return;
-	console.log(interaction);
-});
+
 
 
 client.login(process.env.token);

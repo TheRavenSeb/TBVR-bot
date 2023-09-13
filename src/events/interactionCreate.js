@@ -17,6 +17,7 @@ module.exports = {
 		if (!interaction.isCommand() || BlacklistedUsers.includes(interaction.user.id)) return;
         
 		const command = client.commands.get(interaction.commandName);
+		if(interaction.isModalSubmit()){return console.log(interaction)}
 		if (!command) return;
 
 		const embed = new EmbedBuilder()
@@ -37,7 +38,7 @@ module.exports = {
 			const noPerms = new EmbedBuilder()
 				.setTitle("```You do not have permission to run this command!```")
 				.setColor("DarkButNotBlack");
-
+			
 			if (command.PermsNeeded && !interaction.member.roles.cache.some(r => r.name == "Spirits")) {
 				return interaction.reply({ embeds: [noPerms] });
 			}

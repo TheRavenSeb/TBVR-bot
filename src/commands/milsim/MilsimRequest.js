@@ -1,9 +1,9 @@
-const { SlashCommandBuilder, ModalBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { SlashCommandBuilder,TextInputBuilder,TextInputStyle, ModalBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('bot-information')
+        .setName('milsim-request')
         .setDescription('Returns info about the bot'),
     async execute(interaction, client){
 
@@ -39,5 +39,25 @@ const modal = new ModalBuilder()
 
 		// Show the modal to the user
 		await interaction.showModal(modal);
+        const modalResponse = await interaction.awaitModalSubmit({
+            filter: (i) =>
+              i.user.id === interaction.user.id,
+            time: 60000,
+          });
+        
+          if (modalResponse.isModalSubmit()) {
+            
+        
+            const embed = new EmbedBuilder()
+              .setTitle('milsim request sent')
+              .setDescription(
+                `Your request has been sent to the staff team please wait for a dm/response from a staff member. \n\n ${modalResponse.values}`
+              );
+        
+            await modalResponse.update({ embeds: [embed] });
+            console.log(modalResponse.values);
+          }
+
+
 	}
 };
