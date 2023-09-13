@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const { client } = require("..");
+const { client } = require("../index");
 
 async function errors() {
 	process.on("unhandledRejection", async (error) => {

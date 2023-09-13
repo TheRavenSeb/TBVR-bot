@@ -24,7 +24,7 @@ module.exports = {
 			.setColor("DarkButNotBlack");
 
 		try {
-			client.channels.cache.get("1140407397492465664").send({ embeds: [embed] });
+		
 
 			const devOn = new EmbedBuilder()
 				.setTitle("```This is a developer only command!```")

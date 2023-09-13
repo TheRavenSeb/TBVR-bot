@@ -1,13 +1,13 @@
-const chalk = require("chalk");
+import("chalk");
 const ActivityType = require("discord.js");
 module.exports = {
 	name: "ready",
 	once: true,
 	async execute(client) {
 		client.channels.cache.get("1082664918882467920").send("```Bot is online!```");
-		console.info(chalk.green(`[Discord bot]:Ready! Logged in as ${client.user.tag} on Node ${process.version}`));
+		console.info(`[Discord bot]:Ready! Logged in as ${client.user.tag} on Node ${process.version}`);
 		
-		console.info(chalk.green(`[Discord bot]:Handling ${client.guilds.cache.reduce((acc, g) => acc + g.memberCount,0)} users`));
+		console.info(`[Discord bot]:Handling ${client.guilds.cache.reduce((acc, g) => acc + g.memberCount,0)} users`);
 
 		const activities = [
 			`/faq for help!`,
